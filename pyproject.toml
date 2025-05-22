@@ -1,0 +1,18 @@
+[project]
+name = "profil-geojson-dxf"
+version = "0.1.0"
+description = "Aplikacja Streamlit do konwersji GeoJSON na DXF"
+authors = [
+    { name = "Twoje Imię", email = "twoj@email.com" }
+]
+requires-python = ">=3.9"
+
+dependencies = [
+    "streamlit",
+    "jsons",
+    "ezdxf",
+    "pyproj"
+]
+
+[tool.setuptools]
+packages = ["."]
