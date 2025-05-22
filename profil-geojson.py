@@ -13,6 +13,7 @@ st.subheader("Copyright przemeks505@gmail.com")
 with st.expander("Zobacz instrukcję."):
         st.write("""
 Szybki profil działki z NMT – eksport do DXF
+
 Krok 1: Wejdź na stronę
 🔗 https://polska.e-mapa.net
 
