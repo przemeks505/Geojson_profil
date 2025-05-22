@@ -9,7 +9,7 @@ import tempfile
 import os
 
 st.title("Generator profilu z GeoJSON do DXF")
-
+st.subheader("Copyright przmeks505@gmail.com")
 uploaded_file = st.file_uploader("Prześlij plik GeoJSON", type=["geojson"])
 
 if uploaded_file:
