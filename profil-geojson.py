@@ -10,6 +10,32 @@ import os
 
 st.title("Generator profilu z GeoJSON do DXF")
 st.subheader("Copyright przemeks505@gmail.com")
+with st.expander("Zobacz instrukcję."):
+        st.write("""
+Szybki profil działki z NMT – eksport do DXF
+Krok 1: Wejdź na stronę
+🔗 https://polska.e-mapa.net
+
+Krok 2: Wygeneruj profil terenu
+Wyszukaj interesującą Cię działkę.
+W menu narzędzi wybierz „Profil podłużny”.
+Zaznacz linię profilu na mapie i kliknij „Generuj”.
+
+Krok 3: Pobierz plik GeoJSON
+Po wygenerowaniu profilu kliknij przycisk „Pobierz GeoJSON (WGS84)”.
+Zapisz plik na dysku – będzie on miał nazwę profil.geojson.
+
+Krok 4: Skorzystaj z konwertera online
+🔗 Przejdź na stronę: https://geojsonprofil.streamlit.app
+
+Przeciągnij plik profil.geojson na stronę lub użyj przycisku „Wybierz plik”, aby go załadować.
+
+Krok 5: Pobierz gotowy plik DXF
+Kliknij przycisk „Pobierz DXF”.
+Plik profil.dxf zostanie pobrany automatycznie.
+
+""")
+
 uploaded_file = st.file_uploader("Prześlij plik GeoJSON", type=["geojson"])
 
 if uploaded_file:
