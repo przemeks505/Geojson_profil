@@ -1,7 +1,8 @@
-streamlit
-jsons
-ezdxf
-math
+streamlitstreamlit==1.45.1
+jsons==1.6.3
+ezdxf==1.4.2
 pyproj
 tempfile
 os
+
+
