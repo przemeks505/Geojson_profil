@@ -1,18 +1,16 @@
 [project]
 name = "profil-geojson-dxf"
 version = "0.1.0"
-description = "Aplikacja Streamlit do konwersji GeoJSON na DXF"
-authors = [
-    { name = "Twoje Imię", email = "twoj@email.com" }
-]
+description = "Streamlit app for generating DXF from GeoJSON"
+authors = ["Twoje Imię <mail@domena.com>"]
 requires-python = ">=3.9"
 
 dependencies = [
-    "streamlit",
-    "jsons",
-    "ezdxf",
-    "pyproj"
+    "streamlit>=1.34.0",
+    "jsons>=1.6.3",
+    "ezdxf>=1.1.1",
+    "pyproj>=3.6.1",
 ]
 
-[tool.setuptools]
-packages = ["."]
+[tool.uv]
+# brak opcji installowania lokalnego projektu — uv tylko instaluje zależności z `dependencies`
