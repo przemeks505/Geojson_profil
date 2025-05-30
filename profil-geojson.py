@@ -6,36 +6,8 @@ from ezdxf.enums import TextEntityAlignment
 import math
 from pyproj import Geod
 import tempfile
-import os
 
-st.title("Generator profilu z GeoJSON do DXF")
-st.subheader("Copyright przemeks505@gmail.com")
-
-with st.expander("Zobacz instrukcję."):
-    st.write("""
-Szybki profil działki z NMT – eksport do DXF
-
-Krok 1: Wejdź na stronę
-🔗 https://polska.e-mapa.net
-
-Krok 2: Wygeneruj profil terenu
-Wyszukaj interesującą Cię działkę.
-W menu narzędzi wybierz „Profil podłużny”.
-Zaznacz linię profilu na mapie i kliknij „Generuj”.
-
-Krok 3: Pobierz plik GeoJSON
-Po wygenerowaniu profilu kliknij przycisk „Pobierz GeoJSON (WGS84)”.
-Zapisz plik na dysku – będzie on miał nazwę profil.geojson.
-
-Krok 4: Skorzystaj z konwertera online
-🔗 Przejdź na stronę: https://geojsonprofil.streamlit.app
-
-Przeciągnij plik profil.geojson na stronę lub użyj przycisku „Wybierz plik”, aby go załadować.
-
-Krok 5: Pobierz gotowy plik DXF
-Kliknij przycisk „Pobierz DXF”.
-Plik profil.dxf zostanie pobrany automatycznie.
-""")
+st.image('logo.png', caption="ⓒ przemeks505@gmail.com")
 
 uploaded_file = st.file_uploader("Prześlij plik GeoJSON", type=["geojson"])
 
@@ -89,3 +61,34 @@ if uploaded_file:
 
     except Exception as e:
         st.error("Błąd: Niepoprawny plik GeoJSON. Upewnij się, że przesłany plik pochodzi z narzędzia 'Profil podłużny' na stronie https://polska.e-mapa.net.")
+
+with st.expander("Zobacz instrukcję."):
+    st.markdown("""
+Szybki profil działki z NMT – eksport do DXF
+
+Krok 1: Wejdź na stronę
+🔗 https://polska.e-mapa.net
+
+Krok 2: Wygeneruj profil terenu
+Wyszukaj interesującą Cię działkę.
+W menu narzędzi wybierz „Profil podłużny”.
+Zaznacz linię profilu na mapie i kliknij „Generuj”.
+
+Krok 3: Pobierz plik GeoJSON
+Po wygenerowaniu profilu kliknij przycisk „Pobierz GeoJSON (WGS84)”.
+Zapisz plik na dysku – będzie on miał nazwę profil.geojson.
+Pobrany plik powinien mieć taką strukturę:\n
+{"name":"demo.geojson","type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"LineString","coordinates":[[20.508315289026996,50.45245033244687,199.68], [20.508320567942125,50.452467736108744,199.45], [20.508325846861265,50.45248513977032,199.39], [20.508331125784412,50.452502543431535,198.91], [20.508336404711564,50.452519947092455,198.84], [20.508341683642726,50.45253735075303,198.29],
+
+Krok 4: Skorzystaj z konwertera online
+🔗 Przejdź na stronę: https://geojsonprofil.streamlit.app
+
+Przeciągnij plik profil.geojson na stronę lub użyj przycisku „Wybierz plik”, aby go załadować.
+
+Krok 5: Pobierz gotowy plik DXF
+Kliknij przycisk „Pobierz DXF”.
+Plik profil.dxf zostanie pobrany automatycznie i będzie wyglądał jak
+rysunek poniżej.
+""")
+    st.image('wynik.png', caption="ⓒ przemeks505@gmail.com")
+
